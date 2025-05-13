@@ -91,20 +91,21 @@ h1 {
   margin-bottom: 2rem;
   color: #a2a6ac;
 }
-
 .foto-perfil {
-  width: 400px;
-  height: 400px;
-  max-width: 100%;
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  border: 4px solid #0f172a;
-  box-shadow: 0 0 20px rgba(70, 70, 229, 0.5);
-  transition: all 0.3s ease;
+  border: 5px solid transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave normal */
+  object-fit: cover;
+  transition: all 0.3s ease-in-out; /* Transição suave */
 }
 
-
 .foto-perfil:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7); /* Brilho ao passar o mouse */
+  border-color: #9333ea; /* Adiciona uma borda roxa quando em hover */
+  transform: scale(1.05); /* Aumenta a imagem */
 }
 
 /* SOBRE */
@@ -199,6 +200,62 @@ h1 {
   line-height: 1.25rem;
 }
 
+/* Estilo para os Botões */
+.botoes-projetos {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.botao {
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    border-radius: 8px;
+    background: #3b82f6; /* Cor principal */
+    color: #fff;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.botao:hover {
+    background: #2563eb; /* Cor mais escura no hover */
+    transform: translateY(-2px);
+}
+
+.botao-build {
+    background: #9333ea; /* Cor roxa para o botão "Ver Site" */
+}
+
+.botao-build:hover {
+    background: #7e22ce; /* Cor mais escura no hover */
+}
+
+/* ÍCONE DE LUPA */
+.zoom-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.zoom-icone {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 50%;
+  display: none;
+}
+
+.projetos-cards:hover .zoom-icone {
+  display: block;
+}
+
 /* CONTATO */
 .contato {
   padding: 6rem 2rem;
@@ -254,35 +311,8 @@ button {
 button:hover {
   background: linear-gradient(to right, #9333ea, #3b82f6);
 }
-.botoes-projetos {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
 
-.botao {
-  text-decoration: none;
-  padding: 0.5rem 1.2rem;
-  font-weight: 500;
-  border-radius: 8px;
-  background: #3b82f6;
-  color: #fff;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.botao:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
-}
-
-.botao-build {
-  background: #9333ea;
-}
-
-.botao-build:hover {
-  background: #7e22ce;
-}
-
+/* MODAL DE IMAGEM */
 .modal {
   position: fixed;
   top: 0;
@@ -304,7 +334,7 @@ button:hover {
   border-radius: 12px;
   max-width: 90%;
   max-height: 90%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -321,4 +351,44 @@ button:hover {
   font-size: 2rem;
   color: #e2e8f0;
   cursor: pointer;
+}
+.footer {
+    background-color: #023c5e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-texto {
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social-link {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-social-link:hover {
+    color: #00aaff;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
 }

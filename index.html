@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css">
     <title>Portfolio Luiz Paulo</title>
 </head>
 
@@ -35,7 +34,7 @@
         <div id="home" class="cabecalho">
             <img src="assets/WhatsApp Image 2021-06-14 at 12.59.33.jpeg" alt="Foto de Luiz Paulo" class="foto-perfil">
             <h1>Sou Luiz Paulo Medeiros da Cunha Júnior</h1>
-            <p class="cabecalho-sub-titulo">Sou desenvolvedor web fullstack.</p>
+            <p class="cabecalho-sub-titulo">Desenvolvedor web fullstack.</p>
         </div>
     </main>
 
@@ -43,23 +42,33 @@
         <h2 class="sobre-titulo">Sobre Mim</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">
-                Olá, meu nome é Luiz Paulo e sou um desenvolvedor web apaixonado por criar soluções inovadoras.
-                Neste portfólio, você encontrará uma seleção dos meus projetos mais recentes e relevantes. Estou sempre
-                em
-                busca de novos desafios e oportunidades para aprender e crescer na área de desenvolvimento web.
+                Sou um desenvolvedor web apaixonado por criar soluções inovadoras e práticas. Com experiência em
+                diversas tecnologias, meu foco está em construir aplicações que são não apenas eficientes, mas também
+                agradáveis de usar. Meu objetivo é sempre aprender novas técnicas e melhorar minhas habilidades para
+                oferecer a melhor experiência aos usuários. Ao longo dos anos, me especializei em desenvolver tanto no
+                front-end quanto no back-end, criando sistemas completos e escaláveis.
+
+                Além de programar, adoro colaborar em projetos desafiadores e contribuir para a comunidade de
+                tecnologia. Em meu portfólio, você encontrará alguns dos meus projetos mais recentes, que demonstram
+                minha habilidade em diversas áreas do desenvolvimento web.
+
+                Estou sempre aberto a novos desafios e oportunidades de crescimento!
             </p>
         </div>
     </section>
-
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulo">Meus Projetos</h2>
         <div class="projetos-caixa">
-
+            <!-- Projeto 1 -->
             <div class="projetos-cards">
-                <img src="assets/AnimacoesJavaScript.png" alt="Imagem do projeto 1" class="projetos-imagem">
+                <div class="zoom-container">
+                    <img src="assets/AnimacoesJavaScript.png" alt="Imagem do projeto 1" class="projetos-imagem">
+                    <div class="zoom-icone">🔍</div>
+                </div>
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Página animada com JavaScript</h3>
-                    <p class="paragrafo-projetos">Descrição do projeto 1.</p>
+                    <p class="paragrafo-projetos">Treino e estudos com animações , site web animados com css, html ,
+                        javaScript , displayflex.</p>
                     <div class="botoes-projetos">
                         <a href="https://github.com/LuizPauloJRM/Animacoes_JavaScript/tree/main/GamePlayFps"
                             class="botao" target="_blank">Ver Código</a>
@@ -68,8 +77,12 @@
                 </div>
             </div>
 
+            <!-- Projeto 2 -->
             <div class="projetos-cards">
-                <img src="assets/SliderJavaScript.png" alt="Imagem do projeto 2" class="projetos-imagem">
+                <div class="zoom-container">
+                    <img src="assets/SliderJavaScript.png" alt="Imagem do projeto 2" class="projetos-imagem">
+                    <div class="zoom-icone">🔍</div>
+                </div>
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Slider</h3>
                     <p class="paragrafo-projetos">Descrição do projeto 2.</p>
@@ -81,8 +94,12 @@
                 </div>
             </div>
 
+            <!-- Projeto 3 -->
             <div class="projetos-cards">
-                <img src="assets/placeholder.png" alt="Imagem do projeto 3" class="projetos-imagem">
+                <div class="zoom-container">
+                    <img src="assets/placeholder.png" alt="Imagem do projeto 3" class="projetos-imagem">
+                    <div class="zoom-icone">🔍</div>
+                </div>
                 <div class="caixa-textos-projetos">
                     <h3 class="info-projetos">Projeto 3</h3>
                     <p class="paragrafo-projetos">Descrição do projeto 3.</p>
@@ -93,13 +110,20 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+
+
+    </section>
+
+
+
+    </div>
     </section>
 
     <section id="contato" class="contato">
         <h2 class="contatos-titulo">Contatos</h2>
-        <form class="formulario-contato" id="formulario">
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhatsApp(event)">
             <div class="grupo-form">
                 <label for="nome">Nome</label>
                 <input id="nome" name="nome" placeholder="Nome" class="campo-form">
@@ -108,24 +132,39 @@
                 <label for="mensagem">Mensagem</label>
                 <textarea id="mensagem" name="mensagem" class="text-form" placeholder="Digite sua mensagem"></textarea>
             </div>
-            <button type="submit" class="botao">Enviar</button>
+            <button type="submit" class="botao">Enviar mensagem WhatsApp</button>
         </form>
     </section>
-
     <!-- Modal de Imagem -->
     <div id="modal" class="modal">
         <div class="modal-conteudo">
-            <span id="modal-fechar" class="modal-fechar">&times;</span>
-            <img id="modal-imagem" src="" alt="Projeto ampliado" />
+            <!-- Botão de Fechar (X) -->
+            <span class="modal-fechar">&times;</span>
+            <img id="modal-img" src="" alt="Imagem do Projeto">
         </div>
     </div>
-    <script src="scriptModal.js" defer></script>
 
-
+    <script src="scripts/scriptModal.js"></script>
+    <script src="scripts/scriptWhatsApp.js"></script>
 </body>
-
-</html>
-
-</body>
+<footer class="footer">
+    <div class="footer-conteudo">
+        <p class="footer-texto">© 2025 Luiz Paulo Medeiros - Todos os direitos reservados</p>
+        <div class="footer-social">
+            <a href="https://github.com/LuizPauloJRM?tab=repositories" target="_blank" class="footer-social-link"
+                aria-label="GitHub">
+                <img src="assets/github.png" alt="GitHub Logo" width="24" height="24">
+            </a>
+            <a href="https://www.linkedin.com/in/luiz-medeiros-38480b26a/" target="_blank" class="footer-social-link"
+                aria-label="LinkedIn">
+                <img src="assets/images.png" alt="LinkedIn Logo" width="24" height="24">
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5561992105813" target="_blank" class="footer-social-link"
+                aria-label="WhatsApp">
+                <img src="assets/logo-whatsapp-preto-branco-2048.png" alt="WhatsApp" width="24" height="24">
+            </a>
+        </div>
+    </div>
+</footer>
 
 </html>
